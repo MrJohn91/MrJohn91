@@ -21,11 +21,11 @@ Here are some of the technologies and tools I work with:
 
 Here are some of the projects I've been working on:
 
-1. PydataExplorer (Link to project
+1. PydataExplorer 
    - Description: I utilized Python using the pandas package along with tools like Visual Studio Code and Jupyter Notebook to work on this project.
    - This repository showcases my coding journey and exploration of data analysis.
 
-2. GeniusGrowth (Link to project)
+2. GeniusGrowth.
    - Description: This project involves setting up a web server, configuring security groups, load balancing, and DNS configuration.
    - It aims to create a secure and efficient web infrastructure for hosting websites or web applications. By implementing these components.
    -  The project ensures reliable performance, enhanced security, and efficient distribution of incoming traffic.
