@@ -1,12 +1,11 @@
 
 
-## 👋 Hello, World!
+# 👋 Hello, World!
 
-I'm John Igbokwe a Tech Enthusiast passionate about Technologies. Welcome to my GitHub profile!
+I'm John Igbokwe a Data Scientist and passionate about Technologies. Welcome to my GitHub profile!
 
-- 🌱 I’m currently learning Cloud Computing & Machine Leraning.
-- 💼 I'm working on PyDataExplorer and Geniusgrowth.
-- 📫 How to reach me: igbokwe@successwithigbokwe.com.
+- 🌱 I’m currently working on Cloud Computing projects, Machine Leraning projects and Data Analyis projects.
+- 📫 How to reach me: nfluncvjohn@gmail.com
 
 ## 🔧 Technologies & Tools
 
@@ -14,16 +13,16 @@ Here are some of the technologies and tools I work with:
 
 - Programming Languages: python
 - Frameworks & Libraries: pandas package
-- Databases: DynamoDB
-- Tools & Platforms: AWS, VISUAL STUDIO CODE, JUPYTER NOTEBOOK
+- Databases: DynamoDB, MYSQL
+- Tools & Platforms: AWS, VISUAL STUDIO CODE, JUPYTER NOTEBOOK, Tableau
 
 ## 🚀 Projects
 
 Here are some of the projects I've been working on:
 
 1. PydataExplorer 
-   - Description: I utilized Python using the pandas package along with tools like Visual Studio Code and Jupyter Notebook to work on this project.
-   - This repository showcases my coding journey and exploration of data analysis.
+   - Description: I utilized Python using the pandas package along with tools like Visual Studio Code and Jupyter Notebook to work on diffrent projects.
+   - My repositories showcases my coding journey and exploration of data analysis.
 
 2. GeniusGrowth.
    - Description: This project involves setting up a web server, configuring security groups, load balancing, and DNS configuration.
