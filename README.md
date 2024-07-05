@@ -22,7 +22,7 @@ Here are some of the projects I've been working on:
 
 1. PydataExplorer 
    - Description: I utilized Python using the pandas package along with tools like Visual Studio Code and Jupyter Notebook to work on diffrent projects.
-   - My repositories showcases my coding journey and exploration of data analysis.
+   - My repositories showcases my coding journey and different projects i worked on and exploration of data analysis.
 
 2. GeniusGrowth.
    - Description: This project involves setting up a web server, configuring security groups, load balancing, and DNS configuration.
