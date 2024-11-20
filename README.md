@@ -5,7 +5,7 @@
 I'm John Igbokwe a Data Scientist and passionate about Technologies. Welcome to my GitHub profile!
 
 - 🌱 I’m currently working on Cloud Computing projects, Machine Leraning projects and Data Analyis projects.
-- 📫 How to reach me: mrjigbokwe@gmail.com
+- 📫 How to reach me: nfluncvjohn@gmail.com
 
 ## 🔧 Technologies & Tools
 
