@@ -2,7 +2,7 @@
 
 # 👋 Hello, World!
 
-I'm John Igbokwe a Data Engineer & Scientist passionate about Technologies. Welcome to my GitHub profile!
+I'm John Igbokwe an AI & Data Engineer, Scientist passionate about Data and Technologies. Welcome to my GitHub profile!
 
 - 🌱 I’m currently working on Cloud Computing projects, Machine Leraning projects and Data Analyis projects.
 - 📫 How to reach me: nfluncvjohn@gmail.com
@@ -11,7 +11,7 @@ I'm John Igbokwe a Data Engineer & Scientist passionate about Technologies. Welc
 
 Here are some of the technologies and tools I work with:
 
-- Programming Languages: python
+- Programming Languages: python, Pyspark
 - Frameworks & Libraries: pandas package
 - Databases: DynamoDB, MYSQL
 - Tools & Platforms: AWS, VISUAL STUDIO CODE, JUPYTER NOTEBOOK, Tableau
