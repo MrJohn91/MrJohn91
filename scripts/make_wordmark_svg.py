@@ -54,15 +54,16 @@ def build_svg() -> str:
         f'viewBox="0 0 {card_w:.0f} {card_h:.0f}" font-family="{FONT}">'
     )
     parts.append(
-        '<style>'
-        '.logo{fill:#39d353;font-size:%dpx;white-space:pre;}'
-        '.k{fill:#7ee787;font-size:%dpx;font-weight:600;}'
-        '.v{fill:#c9d1d9;font-size:%dpx;}'
-        '.card{fill:#0d1117;stroke:#30363d;stroke-width:1;}'
-        '.rock{animation:rock 4s ease-in-out infinite;}'
-        '@keyframes rock{0%%,100%%{transform:rotate(0deg) translate(%dpx,%dpx);}'
-        '50%%{transform:rotate(1.5deg) translate(%dpx,%dpx);}}'
-        '</style>' % (LOGO_SIZE, FIELD_SIZE, FIELD_SIZE, PAD, PAD, PAD, PAD)
+        f'<style>'
+        f'.logo{{fill:#39d353;font-size:{LOGO_SIZE}px;white-space:pre;}}'
+        f'.k{{fill:#7ee787;font-size:{FIELD_SIZE}px;font-weight:600;}}'
+        f'.v{{fill:#c9d1d9;font-size:{FIELD_SIZE}px;}}'
+        f'.card{{fill:#0d1117;stroke:#30363d;stroke-width:1;}}'
+        f'.rock{{animation:rock 2.6s ease-in-out infinite; animation-delay:2.2s;}}'
+        f'@keyframes rock{{0%{{transform:rotate(-4deg) translate({PAD}px,{PAD}px);}}'
+        f'50%{{transform:rotate(4deg) translate({PAD}px,{PAD}px);}}'
+        f'100%{{transform:rotate(-4deg) translate({PAD}px,{PAD}px);}}}}'
+        f'</style>'
     )
     parts.append(
         f'<rect class="card" x="1" y="1" width="{card_w - 2:.0f}" height="{card_h - 2:.0f}" rx="10"/>'
