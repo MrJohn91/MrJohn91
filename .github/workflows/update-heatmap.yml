@@ -1,0 +1,39 @@
+name: Update contribution heatmap
+
+# Refreshes the heatmap SVG daily from real GitHub contribution data.
+# Runs daily, plus whenever main is pushed to, plus on-demand.
+
+"on":
+  schedule:
+    - cron: "20 5 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  heatmap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch real contribution data (no auth needed)
+        run: python scripts/fetch_contributions.py MrJohn91 data/contributions.json
+
+      - name: Render contribution heatmap SVG
+        run: python scripts/render_heatmap_svg.py data/contributions.json contrib-heatmap.svg
+
+      - name: Commit updated art
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh contribution heatmap [skip ci]"
+          file_pattern: "data/contributions.json contrib-heatmap.svg"
