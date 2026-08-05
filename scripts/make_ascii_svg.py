@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert a prepped grayscale image into a monochrome ASCII SVG."""
+"""Convert a prepped grayscale image into a self-typing monochrome ASCII SVG."""
 import sys
 from PIL import Image
 
@@ -12,6 +12,7 @@ RAMP = "@%#*+=-:. "
 CELL_W = 6.2
 CELL_H = 11.5
 FONT_SIZE = 12
+TYPE_DURATION_PER_CHAR = 0.006  # seconds
 
 
 def pixel_to_char(v: int) -> str:
@@ -42,26 +43,35 @@ def build_svg(img: Image.Image) -> str:
     parts.append(
         f'<style>'
         f'.row {{ font-size:{FONT_SIZE}px; fill:#c9d1d9; white-space:pre; }}'
-        f'.cur {{ fill:#39d353; animation: blink 1s step-start infinite; }}'
-        f'@keyframes blink {{ 50% {{ opacity: 0; }} }}'
+        f'.cur {{ fill:#39d353; }}'
         f'</style>'
     )
 
-    # Rendered fully visible by default (GitHub shows these via <img>, which
-    # does not run SMIL or CSS animation in most browsers, Chrome included).
-    # The blinking cursor uses a CSS animation that starts from a visible
-    # state, so it degrades to "just visible" instead of "invisible" on
-    # browsers that skip the animation.
+    delay = 0.0
     for y, row in enumerate(lines):
         ty = (y + 1) * CELL_H - 2
-        safe_row = row.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-        safe_row = safe_row.replace(" ", "&#160;")
-        parts.append(f'<text class="row" x="0" y="{ty:.1f}">{safe_row}</text>')
+        parts.append(f'<text class="row" x="0" y="{ty:.1f}">')
+        for x, ch in enumerate(row):
+            safe = ch.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            if safe == " ":
+                safe = "&#160;"
+            begin = f"{delay:.3f}s"
+            parts.append(
+                f'<tspan opacity="0" x="{x * CELL_W:.1f}">{safe}'
+                f'<animate attributeName="opacity" from="0" to="1" begin="{begin}" '
+                f'dur="0.01s" fill="freeze"/></tspan>'
+            )
+            delay += TYPE_DURATION_PER_CHAR
+        parts.append('</text>')
 
+    # blinking cursor at the end of the typing animation
     cursor_x = len(lines[-1]) * CELL_W if lines else 0
     cursor_y = (len(lines)) * CELL_H - 2
     parts.append(
-        f'<text class="row cur" x="{cursor_x:.1f}" y="{cursor_y:.1f}">_</text>'
+        f'<text class="row cur" x="{cursor_x:.1f}" y="{cursor_y:.1f}" opacity="0">'
+        f'<animate attributeName="opacity" from="0" to="1" begin="{delay:.3f}s" dur="0.01s" fill="freeze"/>'
+        f'<animate attributeName="opacity" values="1;0;1" dur="1s" begin="{delay:.3f}s" repeatCount="indefinite"/>'
+        f'_</text>'
     )
 
     parts.append('</svg>')

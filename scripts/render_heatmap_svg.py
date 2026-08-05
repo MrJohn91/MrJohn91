@@ -92,9 +92,8 @@ def build_svg(payload):
         y = PAD_TOP + di * STEP + CELL - 1
         parts.append(f'<text class="lbl" x="0" y="{y}">{label}</text>')
 
-    # Cells render fully visible immediately. GitHub shows this SVG via
-    # <img>, which does not run CSS/SMIL animation in most browsers, so
-    # nothing here depends on an animation to become visible.
+    delay = 0.0
+    delay_step = 0.9 / max(n_weeks * 7, 1)
     for wi, week in enumerate(weeks):
         for di, day in enumerate(week):
             if not day["date"]:
@@ -106,14 +105,21 @@ def build_svg(payload):
             title = f'{day["date"]}: {day["count"]} contribution(s)'
             parts.append(
                 f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="2" ry="2" '
-                f'fill="{color}"><title>{title}</title></rect>'
+                f'fill="{color}" opacity="0"><title>{title}</title>'
+                f'<animate attributeName="opacity" from="0" to="1" begin="{delay:.3f}s" '
+                f'dur="0.25s" fill="freeze"/></rect>'
             )
+            delay += delay_step
 
     total = stats.get("total", 0)
     longest = stats.get("longest_streak", 0)
     current = stats.get("current_streak", 0)
     summary = f'{total} contributions in the last year   longest streak {longest} days   current streak {current} days'
-    parts.append(f'<text class="lbl" x="{PAD_LEFT}" y="{svg_h - 10}">{summary}</text>')
+    parts.append(
+        f'<text class="lbl" x="{PAD_LEFT}" y="{svg_h - 10}" opacity="0">{summary}'
+        f'<animate attributeName="opacity" from="0" to="1" begin="{delay:.3f}s" dur="0.4s" fill="freeze"/>'
+        f'</text>'
+    )
 
     parts.append('</svg>')
     return "".join(parts)
