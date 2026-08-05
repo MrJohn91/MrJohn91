@@ -16,12 +16,12 @@ LOGO = [
 ]
 
 FIELDS = [
-    ("user", "mrj@synctrack"),
-    ("----", "-------------"),
-    ("OS", "SyncTrack OS (Germany)"),
+    ("user", "MRJ"),
+    ("----", "---"),
+    ("OS", "AI OS (Germany)"),
     ("Role", "AI Engineer & Software Developer"),
     ("Builds", "Voice agents, automations, AI products"),
-    ("Stack", "Python, TypeScript, n8n, Supabase"),
+    ("Stack", "Python, TypeScript, Cloud Engineering"),
     ("Shell", "/bin/ship-it"),
     ("Status", "open to interesting problems"),
 ]
