@@ -38,7 +38,7 @@ I build voice agents, automations, and AI products, then ship them for real.</p>
 <tr>
 <td width="50%" valign="top">
 
-**[synctrack_customer_voice_agent](https://github.com/MrJohn91/synctrack_customer_voice_agent)**
+**[buildwithmrj_voice_agent](https://github.com/MrJohn91/buildwithmrj_voice_agent)**
 Voice AI agent that talks to website visitors in real time, explains the business, and captures qualified leads straight into a CRM, running on a cloned voice.
 
 </td>
@@ -84,7 +84,7 @@ Web tool for scraping and managing outreach leads across multiple platforms, wit
 <h3><code>mrj@github ~ $ ./links.sh</code></h3>
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-mrjportfolio.dev-0d1117?style=for-the-badge&logo=vercel&logoColor=white)](https://mrjportfolio.dev)
-[![SyncTrack](https://img.shields.io/badge/SyncTrack-www.synctrack.de-0d1117?style=for-the-badge&logo=vercel&logoColor=white)](https://www.synctrack.de)
+[![Build with Mr J](https://img.shields.io/badge/Build%20with%20Mr%20J-www.buildwithmrj.com-0d1117?style=for-the-badge&logo=vercel&logoColor=white)](https://www.buildwithmrj.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-mrjigbokwe-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mrjigbokwe/)
 [![Instagram](https://img.shields.io/badge/Instagram-igbokwe__inr-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/igbokwe_inr)
 
